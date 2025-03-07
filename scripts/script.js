@@ -17,36 +17,34 @@
                 msg: `Выбран целый столбец: ${selectedRange.Address}`
             }))
         } else {
-            if (selectedRange.areas.length > 1) { //если выделели несколько диапазонов через Ctrl
+            if (selectedRange.areas.length > 1) { // если выделели несколько диапазонов через Ctrl
                 let ranges = []
-                selectedRange.areas.forEach(area => { //находим адреса этих диапазонов
+                selectedRange.areas.forEach(area => { // находим адреса этих диапазонов
                     let range = []
                     let startRow = area.kb.r1
                     let startColumn = area.kb.ia
                     let endRow = area.kb.r2
                     let endColumn = area.kb.ra
                     range.push(startRow, startColumn, endRow, endColumn)
-                    // console.log(range)
                     ranges.push(range)
-                });
-
+                    // console.log(range)
+                })
                 ranges.forEach(range => {
                     for (let i = range[0]; i <= range[2]; i++) {
                         for (let j = range[1]; j <= range[3]; j++) {
                             let cell = activeSheet.GetRangeByNumber(i, j)
-                            transformCellsVisability(cell)
+                            transformCellsVisibility(cell)
                         }
                     }
-
                 })
             } else { // если один диапазон
                 selectedRange.ForEach(cell => {
-                    transformCellsVisability(cell)
+                    transformCellsVisibility(cell)
                 })
             }
         }
 
-        function transformCellsVisability(cell) {
+        function transformCellsVisibility(cell) {
             let cellValue = cell.GetValue();
             if (cellValue.length > 0) {
                 if (cellValue.startsWith('=')) {
