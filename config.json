@@ -1,0 +1,30 @@
+{
+    "name": "F2 + Enter",
+    "guid": "asc.{b10a1c93-96d0-436b-b7d2-430f810e05df}",
+    "baseUrl": "",
+    "variations": [
+        {
+            "description": "F2 + Enter",
+            "url": "index.html",
+            "icons": [
+                {
+                    "100%": {
+                        "normal": "./resources/img/icon.png"
+                    }
+                }
+            ],
+            "isViewer": false,
+            "EditorsSupport": [
+                "cell"
+            ],
+            "isVisual": false,
+            "isModal": false,
+            "isInsideMode": true,
+            "initDataType": "none",
+            "initData": "",
+            "isUpdateOleOnResize": true,
+            "buttons": [],
+            "isSystem": false
+        }
+    ]
+}
