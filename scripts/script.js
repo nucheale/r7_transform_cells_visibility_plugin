@@ -44,16 +44,23 @@
             }
         }
 
+        // function transformCellsVisibility(cell) {
+        //     let cellValue = cell.GetValue();
+        //     if (cellValue.length > 0) {
+        //         if (cellValue.startsWith('=')) {
+        //             cell.SetNumberFormat('General');
+        //             cell.SetValue(cellValue);
+        //         } else if (Number(cellValue)) {
+        //             cell.SetNumberFormat('General');
+        //             cell.SetValue(cellValue);
+        //         }
+        //     }
+        // }
         function transformCellsVisibility(cell) {
-            let cellValue = cell.GetValue();
+            const cellValue = cell.GetValue();
             if (cellValue.length > 0) {
-                if (cellValue.startsWith('=')) {
-                    cell.SetNumberFormat('General');
-                    cell.SetValue(cellValue);
-                } else if (Number(cellValue)) {
-                    cell.SetNumberFormat('General');
-                    cell.SetValue(cellValue);
-                }
+                cell.SetNumberFormat('#,##0.00')
+                cell.Formula = cell.GetText()
             }
         }
 
